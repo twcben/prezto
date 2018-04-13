@@ -11,3 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+eval "$(direnv hook zsh)"
+
+# added by travis gem
+[ -f /Users/benjaminmorris/.travis/travis.sh ] && source /Users/benjaminmorris/.travis/travis.sh

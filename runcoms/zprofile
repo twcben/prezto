@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='code -w'
+export VISUAL='code -w'
 export PAGER='less'
 
 #
@@ -44,6 +44,9 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  ~/dev/twc-okta_aws_login
+  ~/credentials
+
   $path
 )
 
@@ -61,3 +64,15 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+# Setting PATH for Python 3.6
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+export PATH=~/Library/Python/3.6/bin:$PATH
+
+export GOPATH=~/go
+export GOBIN=$GOPATH/bin
+
+export PATH=$GOBIN:$PATH
